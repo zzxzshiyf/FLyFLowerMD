@@ -60,5 +60,15 @@ export default [
       this.$message.success(msg);
     }
   },
+  {
+    name: 'SCAN_TASK_ADD_SUCCESS',
+    callback: function (e) {
+      this.snackbar = {
+        show: true,
+        color: 'green',
+        text: 'Scan Task Add Successfully.'
+      };
+    }
+  },
 
 ];
