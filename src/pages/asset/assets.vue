@@ -3,7 +3,7 @@
     <v-container grid-list-xl fluid>
       <v-layout row wrap>
         <v-flex sm12>
-          <h3>Task List</h3>
+          <h3>Asset List</h3>
         </v-flex>        
         <v-flex lg12>
           <v-dialog v-model="dialog" max-width="500px">
@@ -15,21 +15,22 @@
                 <v-container grid-list-md>
                   <v-layout column>
                     <v-flex sm8 lg8>
-                      <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
+                      <v-text-field v-model="editedItem.assetName" label="Asset Name"></v-text-field>
                     </v-flex>
                     <v-textarea
-                      label="Target"
-                      v-model="editedItem.target"
+                      label="Host"
+                      v-model="editedItem.host"
                     ></v-textarea>
                     <v-flex sm8 lg8>
-                      <v-text-field v-model="editedItem.type" label="Type"></v-text-field>
+                      <v-text-field v-model="editedItem.deptName" label="Dept Name"></v-text-field>
                     </v-flex>
                     <v-flex sm8 lg8>
-                      <v-text-field v-model="editedItem.date" label="Date"></v-text-field>
+                      <v-text-field v-model="editedItem.adminName" label="Admin Name"></v-text-field>
                     </v-flex>
-                    <v-flex sm8 lg8>
-                      <v-text-field v-model="editedItem.status" label="Status"></v-text-field>
-                    </v-flex>
+                    <v-switch sm8 lg8
+                        :label="`Discover: ${discover.toString()}`"
+                        v-model="editedItem.discover"
+                    ></v-switch>
                   </v-layout>
                 </v-container>
               </v-card-text>
@@ -67,11 +68,11 @@
                 v-model="complex.selected"
                 >
                 <template slot="items" slot-scope="props">
-                  <td>{{ props.item.name }}</td>
-                  <td>{{ props.item.target }}</td>
-                  <td>{{ props.item.type }}</td>
-                  <td>{{ props.item.date }}</td>
-                  <td>{{ props.item.status }}</td>
+                  <td>{{ props.item.assetName }}</td>
+                  <td>{{ props.item.host }}</td>
+                  <td>{{ props.item.deptName }}</td>
+                  <td>{{ props.item.adminName }}</td>
+                  <td>{{ props.item.discover }}</td>
                   <td>
                     <v-btn depressed outline icon fab dark color="primary" small @click="editItem(props.item)">
                       <v-icon>edit</v-icon>
@@ -98,7 +99,8 @@ export default {
       search: '',
       dialog: false,
       editedIndex: -1,
-      formTitle: 'Edit Scan Item',
+      formTitle: 'Edit Asset Item',
+      discover: true,
       editedItem: {
         name: '',
         target: '',
@@ -117,24 +119,24 @@ export default {
         selected: [],
         headers: [
           {
-            text: 'Name',
-            value: 'name'
+            text: 'Asset Name',
+            value: 'assetName'
           },
           {
-            text: 'Target',
-            value: 'target'
+            text: 'Host',
+            value: 'host'
           },
           {
-            text: 'Type',
-            value: 'type'
+            text: 'Dept Name',
+            value: 'deptName'
           },
           {
-            text: 'Date',
-            value: 'date'
+            text: 'Admin Name',
+            value: 'adminName'
           },
           {
-            text: 'Status',
-            value: 'status'
+            text: 'Discover',
+            value: 'discover'
           },
           {
             text: 'Manage',
@@ -152,7 +154,8 @@ export default {
   },
   methods: {
     editItem (item) {
-      console.log(item);
+      // console.log(item);
+      this.discover = item.discover;
       this.editedIndex = this.complex.items.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;

@@ -6,7 +6,7 @@
     </v-toolbar>
     <v-card-text>
       <v-form v-model="valid" ref="form" lazy-validation>
-        <v-layout row wrap>
+        <v-layout column>
           <v-flex lg12 sm12>
             <v-text-field label="Task Name" name="name" v-model="name" required :rules="nameRules">
             </v-text-field>

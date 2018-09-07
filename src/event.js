@@ -70,5 +70,15 @@ export default [
       };
     }
   },
+  {
+    name: 'NEW_ASSET_ADD_SUCCESS',
+    callback: function (e) {
+      this.snackbar = {
+        show: true,
+        color: 'green',
+        text: 'New Asset Add Successfully.'
+      };
+    }
+  },
 
 ];

@@ -98,52 +98,6 @@ export default [
     )
   },  
   {
-    path: '/chat',
-    meta: {
-      public: true,
-    },
-    name: 'Chat',
-    component: () => import(
-      /* webpackChunkName: "routes" */
-      `@/components/chat/ChatLayout.vue`
-    ),
-    redirect: {
-      path: '/chat/messaging'
-    },
-    children: [
-      {
-        path: '/chat/messaging/:uuid?',
-        meta: {
-          public: true,
-        },
-        name: 'ChatMessaging',
-        props: true,
-        components: {
-          default: () => import(
-            /* webpackChunkName: "routes" */
-            /* webpackMode: "lazy-once" */
-            `@/components/chat/ChatMessaging.vue`
-          ),  
-        }   
-      },
-      {
-        path: '/chat/contact/:uuid?',
-        meta: {
-          public: true,
-        },
-        name: 'ChatContact',
-        components: {
-          default: () => import(
-            /* webpackChunkName: "routes" */
-            /* webpackMode: "lazy-once" */
-            `@/components/chat/ChatContact.vue`
-          ),  
-
-        }     
-      }             
-    ]
-  },    
-  {
     path: '/mail',
     meta: {
       public: true,
@@ -197,9 +151,47 @@ export default [
     meta: { breadcrumb: true },
     name: 'scan/tasks',
     component: () => import(
-      /* webpackChunkName: "routes" */
-      /* webpackMode: "lazy-once" */
-      `@/pages/ui/Alert.vue`
+      `@/pages/scan/tasks.vue`
+    )
+  },
+  {
+    path: '/asset/newasset',
+    meta: { breadcrumb: true },
+    name: 'asset/newasset',
+    component: () => import(
+      `@/pages/asset/newasset.vue`
+    )
+  },
+  {
+    path: '/asset/assets',
+    meta: { breadcrumb: true },
+    name: 'asset/assets',
+    component: () => import(
+      `@/pages/asset/assets.vue`
+    )
+  },
+  {
+    path: '/settings',
+    meta: { breadcrumb: true },
+    name: 'settings',
+    component: () => import(
+      `@/pages/settings.vue`
+    )
+  },
+  {
+    path: '/users/userinfo',
+    meta: { breadcrumb: true },
+    name: 'users/userinfo',
+    component: () => import(
+      `@/pages/users/userinfo.vue`
+    )
+  },
+  {
+    path: '/users/updatepwd',
+    meta: { breadcrumb: true },
+    name: 'users/updatepwd',
+    component: () => import(
+      `@/pages/users/updatepwd.vue`
     )
   },
   {

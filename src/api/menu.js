@@ -11,13 +11,13 @@ const Menu =  [
     title: 'UserInfo',
     group: 'users',
     icon: 'fa-address-card',
-    name: 'userinfo',
+    name: 'users/userinfo',
   },
   {
     title: 'UpdatePWD',
     group: 'users',
     icon: 'fa-key',
-    name: 'updatepwd',
+    name: 'users/updatepwd',
   },
   { header: 'SysSettings' },
   {
@@ -34,7 +34,7 @@ const Menu =  [
     component: 'asset',
     items: [
       { name: 'newasset', title: 'New Asset', component: 'asset/newasset' },
-      { name: 'asset', title: 'Asset', component: 'asset/asset' }
+      { name: 'asset', title: 'Assets', component: 'asset/assets' }
     ]
   },
   { header: 'Scan' },
@@ -49,13 +49,6 @@ const Menu =  [
     ]
   },
   { header: 'Examples' },
-  {
-    title: 'Chat',
-    group: 'apps',
-    icon: 'chat_bubble',
-    target: '_blank',
-    name: 'Chat',
-  },
   {
     title: 'Inbox',
     group: 'apps',

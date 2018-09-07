@@ -165,10 +165,6 @@
             :value="item.linear.value"
           >
           </circle-statistic>            
-        </v-flex>    
-        <!-- acitivity/chat widget -->
-        <v-flex lg6 sm12 xs12>
-          <chat-window height="308px"></chat-window>
         </v-flex>
         <v-flex lg6 sm12 xs12>
           <v-widget title="Activities" contentBg="white">
@@ -212,14 +208,12 @@ import VWidget from '@/components/VWidget';
 import Material from 'vuetify/es5/util/colors';
 import VCircle from '@/components/circle/VCircle';
 import BoxChart from '@/components/widgets/chart/BoxChart';
-import ChatWindow from '@/components/chat/ChatWindow';
 import CircleStatistic from '@/components/widgets/statistic/CircleStatistic';
 import LinearStatistic from '@/components/widgets/statistic/LinearStatistic';
 export default {
   components: {
     VWidget,
     MiniStatistic,
-    ChatWindow,
     VCircle,
     WeatherCard,
     PostSingleCard,

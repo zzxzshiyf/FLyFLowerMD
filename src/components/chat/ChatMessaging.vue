@@ -7,7 +7,6 @@
           </chat-history>
         </v-flex>
         <v-flex lg9>
-          <chat-window></chat-window>
         </v-flex>
       </v-layout>
     </template>
@@ -18,7 +17,6 @@
           </chat-history>          
         </v-flex>
         <v-flex sm12 v-if="showWindow">
-          <chat-window></chat-window>
         </v-flex>
       </v-layout>        
     </template>
@@ -26,11 +24,9 @@
 </template>
 <script>
 import ChatHistory from './ChatHistory';
-import ChatWindow from './ChatWindow';
 export default {
   components: {
     ChatHistory,
-    ChatWindow
   },
   data () {
     return {

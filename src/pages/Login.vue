@@ -11,8 +11,20 @@
                   <h1 class="flex my-4 primary--text">FLy FLower</h1>
                 </div>                
                 <v-form>
-                  <v-text-field append-icon="person" name="login" label="用户名" type="text" v-model="model.username"></v-text-field>
-                  <v-text-field append-icon="lock" name="password" label="密码" id="password" type="password" v-model="model.password"></v-text-field>
+                  <v-text-field 
+                    append-icon="person" 
+                    name="login" 
+                    label="用户名" 
+                    type="text" 
+                    v-model="model.username"
+                  ></v-text-field>
+                  <v-text-field 
+                    append-icon="lock" 
+                    name="password" 
+                    label="密码"
+                    type="password"
+                    v-model="model.password"
+                  ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -60,6 +72,7 @@ export default {
   data: () => ({
     loading: false,
     dialog3: false,
+    show1: false,
     items: [
       {
         title: '用户名或密码错误！'
